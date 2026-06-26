@@ -1,0 +1,48 @@
+:root{--pc-bg:#ffffff; --pc-accent:#16a34a}
+
+.placecod-root{
+  min-height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background: var(--color-bg);
+  padding: 40px 12px;
+}
+
+.placecod-card{
+  width:100%;
+  max-width:520px;
+  text-align:center;
+  background: var(--pc-bg);
+  border-radius:12px;
+  padding:44px 28px;
+  box-shadow: 0 10px 30px rgba(16,24,40,0.08);
+}
+
+.check-circle{
+  width:96px;
+  height:96px;
+  border-radius:999px;
+  margin:0 auto 18px auto;
+  background: linear-gradient(180deg, var(--pc-accent), #059669);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.pc-title{
+  margin: 8px 0 6px 0;
+  font-size:18px;
+  color: #111827;
+  font-weight:600;
+}
+
+.pc-address{
+  margin:0;
+  color:#374151;
+  font-size:14px;
+  line-height:1.4;
+  max-height:3.6em;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}

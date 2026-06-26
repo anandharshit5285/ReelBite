@@ -1,0 +1,353 @@
+@import './theme.css';
+
+/* Layout container */
+.profile-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-6) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Header block */
+.profile-header {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: row; /* place wallet at right */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.page-title {
+  padding: var(--space-4) 0;
+  margin-bottom: var(--space-4);
+}
+
+.page-title h1 {
+  font-size: 2.25rem; /* larger page title */
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--space-2) 0;
+  letter-spacing: -0.6px;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+
+.profile-meta {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--color-surface-alt);
+  border: 2px solid var(--color-border);
+}
+
+.profile-info { display: grid; gap: var(--space-3); }
+
+/* Improve profile text styling */
+
+.profile-pill.profile-business {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-size: 1.15rem;
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  display: inline-block;
+}
+
+.profile-pill.profile-address {
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: var(--color-text-secondary);
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* small helper: left-align the text block inside header */
+.profile-info { align-self: center; }
+
+.profile-info .profile-business, .profile-info .profile-address {
+  display: inline-block;
+}
+
+/* Wallet Card Styling */
+.wallet-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-left: 16px;
+  min-width: 200px;
+  max-width: 340px;
+}
+
+.wallet-info {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.wallet-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+}
+
+.wallet-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.wallet-label {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.wallet-amount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #00b37a;  /* Green color for money */
+}
+
+/* Pills */
+.profile-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  width: fit-content;
+  box-shadow: var(--shadow-sm);
+}
+
+.profile-business { font-size: 1.25rem; font-weight: 700; }
+.profile-address { font-size: 1.05rem; color: var(--color-text-secondary); }
+
+/* Stats */
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  border-top: 1px dashed var(--color-border);
+  padding-top: var(--space-6);
+}
+
+.profile-stat {
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-items: center;
+  gap: var(--space-2);
+}
+
+.profile-stat-label {
+  font-size: 1.15rem;
+  color: var(--color-text-secondary);
+}
+
+.profile-stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Separator line under header (as in wireframe) */
+.profile-sep {
+  height: 1px;
+  border: none;
+  background: var(--color-border);
+}
+
+/* Grid of videos */
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px; /* spacing between grid tiles */
+}
+
+.profile-grid-item { 
+    border: none;
+    aspect-ratio: 3 / 4; }
+
+.profile-grid-video {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  background: var(--color-surface);
+  color: var(--color-text-secondary);
+  font-size: 1.5rem;
+}
+
+/* Saved tile overlay controls (used by Saved.jsx) */
+.profile-grid-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.profile-grid-item .tile-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8px;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.profile-grid-item .tile-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  pointer-events: auto; /* enable clicks on buttons inside */
+}
+
+.profile-grid-item .tile-name {
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.profile-grid-item .tile-remove-btn {
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  border: none;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .profile-meta { grid-template-columns: 96px 1fr; }
+  .profile-avatar { width: 96px; height: 96px; }
+  .profile-header { flex-direction: column; align-items: flex-start; }
+  .wallet-card { width: 100%; margin-left: 0; margin-top: var(--space-4); }
+}
+
+@media (max-width: 680px) {
+
+}
+
+/* Profile Details Card */
+.detail-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.detail-section-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.detail-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.detail-item {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: var(--space-4);
+  padding: var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-alt);
+}
+
+.detail-label {
+  color: var(--color-text-secondary);
+  font-size: 0.95rem;
+  align-self: center;
+}
+
+.detail-value {
+  color: var(--color-text);
+  font-weight: 600;
+  align-self: center;
+}
+
+.logout-btn {
+  margin-top: var(--space-6);
+  width: 100%;
+  padding: 12px;
+  background: #ff4b4b;
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #ff3333;
+  transform: translateY(-1px);
+}
+
+.logout-btn:active {
+  transform: translateY(1px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 420px) {
+  .profile-meta { grid-template-columns: 72px 1fr; }
+  .profile-avatar { width: 72px; height: 72px; }
+  .profile-stats { gap: var(--space-4); }
+  .profile-stat-label { font-size: 1rem; }
+  .profile-stat-value { font-size: 1.5rem; }
+  .detail-item { 
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+  .detail-label {
+    font-size: 0.85rem;
+  }
+
+  /* Saved grid: stack the name and remove button vertically to avoid overlap */
+  .profile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .profile-grid-item .tile-controls {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-grid-item .tile-remove-btn {
+    padding: 6px 10px;
+    font-size: 0.92rem;
+  }
+}

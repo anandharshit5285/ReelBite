@@ -1,0 +1,136 @@
+/* Homepage / Landing styles */
+.landing-hero{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.hero-video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  object-fit: cover;
+}
+
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 100%);
+  z-index: 1;
+}
+
+.hero-header{
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+}
+
+.auth-buttons{
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  position: relative;
+}
+
+.auth-button {
+  position: relative;
+}
+
+.btn-outline{
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.3);
+}
+
+/* Button stays highlighted when menu is open */
+.auth-button:has(.auth-menu) .btn-outline {
+  background: rgba(255,255,255,0.18);
+  border-color: rgba(255,255,255,0.3);
+}
+
+.auth-menu{
+  margin: 8px 0 0 0;
+  background: rgba(0,0,0,0.7);
+  padding: 6px 0;
+  list-style: none;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  position: absolute;
+  right: 0;
+  min-width: 100%;
+}
+
+.auth-menu li{
+  padding: 8px 18px;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.auth-menu li:hover{
+  background: rgba(255,255,255,0.06);
+}
+
+.hero-content{
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 920px;
+  padding: 24px;
+  margin-top: 270px; /* Move content down */
+}
+
+.brand{
+  font-family: "Our Lexend", sans-serif;
+  font-style: italic;
+  font-size: 55px;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.tagline{
+  margin: 8px 0 0 0;
+  font-family: "times new roman", serif;
+  font-size: 50px;
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.sub{
+  margin-top: 14px;
+  font-size: 17.5px;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+@media (max-width: 720px){
+  .brand{ font-size: 36px }
+  .tagline{ font-size: 22px }
+  .hero-header{ right: 12px; }
+  .hero-content { margin-top: 40px; }
+}

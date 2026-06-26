@@ -1,0 +1,84 @@
+@import './theme.css';
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(10px) saturate(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  z-index: 50;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bottom-nav__inner {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.bottom-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  gap: 4px;
+  padding: 8px 0;
+  transition: all 0.2s ease;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.bottom-nav__item::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  border-radius: 2px 2px 0 0;
+  transition: transform 0.2s ease;
+}
+
+.bottom-nav__item.is-active {
+  color: #fff;
+}
+
+.bottom-nav__item.is-active::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.bottom-nav__icon {
+  line-height: 0;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-nav__label {
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 2px;
+  color: inherit;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Safe area for iOS */
+@supports(padding: max(0px)) {
+  .bottom-nav {
+    height: calc(60px + env(safe-area-inset-bottom));
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

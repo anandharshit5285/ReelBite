@@ -1,0 +1,161 @@
+/* Shared Auth Form Styles - themed to match Landing */
+@import './theme.css';
+
+.auth-page-wrapper {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  position: relative;
+  background-image: url("https://ik.imagekit.io/jrr107twa/pexels-thomas-svensson-1505611-5395180.jpg?updatedAt=1761724897373");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #fff;
+}
+
+/* subtle dark overlay to match the landing page tone */
+.auth-page-wrapper::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.65) 100%);
+  z-index: 0;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 520px;
+  background: rgba(10,10,10,0.5);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 28px 28px 22px;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  backdrop-filter: blur(6px);
+  color: #fff;
+}
+
+.auth-card header { text-align: center; }
+
+.auth-title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  letter-spacing: .5px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.auth-subtitle {
+  font-size: .95rem;
+  color: rgba(255,255,255,0.85);
+}
+
+form.auth-form { display: flex; flex-direction: column; gap: 16px; }
+
+.field-group { display: flex; flex-direction: column; gap: 6px; }
+
+.field-group label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+}
+
+.field-group input {
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  padding: 12px 14px;
+  font: inherit;
+  border-radius: 8px;
+  outline: none;
+  color: #fff;
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease;
+  width: 100%;
+  min-width: 0;
+}
+
+.field-group input::placeholder { color: rgba(255,255,255,0.48); }
+
+.field-group input:focus-visible {
+  border-color: rgba(255,255,255,0.16);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  background: rgba(255,255,255,0.02);
+}
+
+.two-col { display: flex; gap: 12px; }
+.two-col .field-group { flex: 1 1 0; min-width: 0; }
+
+button.auth-submit {
+  margin-top: 6px;
+  background: var(--color-accent, #2f80ed);
+  color: #fff;
+  border: none;
+  padding: 12px 18px;
+  font: inherit;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  letter-spacing: .4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+  box-shadow: 0 8px 24px rgba(47,128,237,0.14);
+}
+
+button.auth-submit:hover { background: color-mix(in srgb, var(--color-accent, #2f80ed) 85%, black 15%); }
+button.auth-submit:active { transform: translateY(1px); }
+button.auth-submit:focus-visible { outline: 2px solid rgba(255,255,255,0.08); outline-offset: 2px; }
+
+.auth-alt-action {
+  text-align: center;
+  font-size: .9rem;
+  color: rgba(255,255,255,0.78);
+}
+
+.auth-alt-action a { font-weight: 700; color: var(--color-accent, #7db3ff); }
+
+.small-note { font-size: .8rem; color: rgba(255,255,255,0.68); line-height: 1.2; }
+
+/* Utility for spacing adjustments */
+.gap-sm { gap: 8px; }
+
+/* Responsive */
+@media (max-width: 480px) {
+  .auth-card { padding: 20px 18px 16px; max-width: 92%; }
+  .two-col { flex-direction: column; }
+  .auth-title { font-size: 1.4rem; }
+}
+
+/* Smooth transitions for theme change */
+body, .auth-card, .field-group input { transition: background 200ms ease, color 200ms ease, border-color 200ms ease; }
+
+/* Strong override for auth inputs: do NOT change background on focus.
+   This prevents the input from becoming unreadable when focused.
+   We target only inputs inside the auth card so other forms keep their behavior. */
+.auth-card .field-group input:focus,
+.auth-card .field-group input:focus-visible {
+  /* preserve whatever background is already set on the element */
+  background-color: inherit !important;
+  background: inherit !important;
+  /* keep text and caret visible (inherit from card color) */
+  color: inherit !important;
+  caret-color: inherit !important;
+  /* visible focus indicator without changing fill */
+  border-color: rgba(255,255,255,0.16) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important;
+}
+
+/* Ensure placeholder remains legible in the auth card */
+.auth-card .field-group input::placeholder {
+  color: rgba(255,255,255,0.48) !important;
+}
