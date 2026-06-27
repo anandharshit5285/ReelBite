@@ -75,7 +75,7 @@ const CreateFood = () => {
       console.log("Uploading...");
 
       const response = await axios.post(
-        "http://localhost:3000/api/food/reels",
+        "https://reelbite-r9zo.onrender.com/api/food/reels",
         formData,
         {
           withCredentials: true,

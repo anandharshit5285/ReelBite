@@ -10,7 +10,7 @@ const Profile = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3000/api/food-partner/${id}`, {
+      .get(`https://reelbite-r9zo.onrender.com/api/food-partner/${id}`, {
         withCredentials: true,
       })
       .then((response) => {
