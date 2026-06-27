@@ -4,39 +4,61 @@ A full-stack MERN food ordering platform with separate authentication for users 
 
 ## 🚀 Live Demo
 
-Frontend: https://reel-bite-leh28krk0-harshitanand5285.vercel.app
+**Frontend:**  
+https://reel-bite-leh28krk0-harshitanand5285.vercel.app
 
-Backend: https://reelbite-r9zo.onrender.com
+**Backend:**  
+https://reelbite-r9zo.onrender.com
 
 ## ✨ Features
 
-- User Authentication (JWT)
-- Food Partner Authentication
-- Food Upload
-- Cart Management
-- Order Placement
-- Image Upload using ImageKit
-- Responsive UI
-- MongoDB Atlas Database
+- 🔐 User Authentication (JWT)
+- 🍽️ Food Partner Authentication
+- 📸 Food Upload with ImageKit
+- 🛒 Cart Management
+- 💳 Cash on Delivery
+- ❤️ Save Foods
+- 👤 User Profile
+- 📱 Responsive Design
+- ☁️ MongoDB Atlas Database
 
 ## 🛠️ Tech Stack
 
 - React.js
+- Vite
 - Node.js
 - Express.js
 - MongoDB Atlas
-- JWT
+- JWT Authentication
 - ImageKit
 - Vercel
 - Render
 
 ## 📂 Installation
+
+```bash
+git clone https://github.com/anandharshit5285/ReelBite.git
+cd ReelBite
+npm install
+```
+
 ## 📁 Project Structure
 
-```
+```text
 ReelBite
 ├── Backend
+│   ├── src
+│   ├── routes
+│   ├── controllers
+│   ├── models
+│   └── middleware
+│
 └── Frontend
+    ├── src
+    ├── pages
+    ├── components
+    ├── routes
+    └── styles
 ```
 
 ## 👨‍💻 Author
@@ -48,10 +70,8 @@ ReelBite
 
 ## ⭐ Support
 
-If you like this project, please give it a ⭐ on GitHub.
+If you found this project helpful, please consider giving it a ⭐ on GitHub.
 
-```bash
-git clone https://github.com/anandharshit5285/ReelBite.git
-cd ReelBite
-npm install
-```
+## 📜 License
+
+This project is created for learning and portfolio purposes.
