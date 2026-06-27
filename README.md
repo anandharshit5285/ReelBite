@@ -1,131 +1,57 @@
-# 🍔 ReelBite – MERN Stack Food Reel Ordering Platform
+# 🍔 ReelBite
 
-## 📌 Overview
+A full-stack MERN food ordering platform with separate authentication for users and food partners.
 
-ReelBite is a full-stack MERN application inspired by short-video platforms like Instagram Reels. Users can explore food videos, like and save dishes, add items to their cart, and place Cash on Delivery (COD) orders. Food Partners can register, upload food videos, and manage their menu through a dedicated dashboard.
+## 🚀 Live Demo
 
----
+Frontend: https://reel-bite-leh28krk0-harshitanand5285.vercel.app
 
-## 🚀 Features
+Backend: https://reelbite-r9zo.onrender.com
 
-### 👤 User Features
+## ✨ Features
 
-- User Registration & Login
-- Browse Food Reels
-- Like & Save Food
-- Add Items to Cart
-- Cash on Delivery (COD) Orders
-- View Food Partner Profiles
-
-### 🍽️ Food Partner Features
-
-- Food Partner Registration & Login
-- Upload Food Videos
-- Create Food Listings
-- Manage Food Menu
-- View Uploaded Food Items
-
----
+- User Authentication (JWT)
+- Food Partner Authentication
+- Food Upload
+- Cart Management
+- Order Placement
+- Image Upload using ImageKit
+- Responsive UI
+- MongoDB Atlas Database
 
 ## 🛠️ Tech Stack
 
-### Frontend
-
 - React.js
-- Vite
-- React Router DOM
-- Axios
-- CSS
-
-### Backend
-
 - Node.js
 - Express.js
 - MongoDB Atlas
-- Mongoose
-- JWT Authentication
-- Multer
+- JWT
 - ImageKit
+- Vercel
+- Render
 
----
+## 📂 Installation
+## 📁 Project Structure
 
-## 📂 Project Structure
-
-```text
+```
 ReelBite
-│
 ├── Backend
-├── Frontend
-└── README.md
+└── Frontend
 ```
-
----
-
-## ⚙️ Installation
-
-### Clone Repository
-
-```bash
-git clone https://github.com/anandharshit5285/ReelBite.git
-```
-
-### Backend
-
-```bash
-cd Backend
-npm install
-npm start
-```
-
-### Frontend
-
-```bash
-cd Frontend
-npm install
-npm run dev
-```
-
----
-
-## 🔐 Environment Variables
-
-Create a `.env` file inside the Backend folder.
-
-```env
-MONGODB_URI=YOUR_MONGODB_URI
-JWT_SECRET=YOUR_SECRET_KEY
-IMAGEKIT_PUBLIC_KEY=YOUR_PUBLIC_KEY
-IMAGEKIT_PRIVATE_KEY=YOUR_PRIVATE_KEY
-IMAGEKIT_URL_ENDPOINT=YOUR_URL_ENDPOINT
-```
-
----
-
-## 📸 Screenshots
-
-Add screenshots of:
-
-- Home Feed
-- Food Partner Dashboard
-- Food Reels
-- Cart
-- Order Page
-
----
-
-## 🚀 Future Enhancements
-
-- Online Payment Gateway
-- Search & Filters
-- Ratings & Reviews
-- Order History
-- Admin Dashboard
-- Push Notifications
-
----
 
 ## 👨‍💻 Author
 
 **Harshit Anand**
 
-GitHub: https://github.com/anandharshit5285
+- GitHub: https://github.com/anandharshit5285
+- LinkedIn: https://www.linkedin.com/in/harshit-anand-703435204/
+
+## ⭐ Support
+
+If you like this project, please give it a ⭐ on GitHub.
+
+```bash
+git clone https://github.com/anandharshit5285/ReelBite.git
+cd ReelBite
+npm install
+```
