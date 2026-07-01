@@ -20,7 +20,11 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.status(200).json({
+    success: true,
+    message: "ReelBite API is running.",
+    version: "1.0.0",
+  });
 });
 
 app.use("/api/auth", authRoutes);
