@@ -11,6 +11,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://reel-bite-leh28krk0-harshitanand5285.vercel.app",
+      "https://reel-bite-one.vercel.app",
     ],
     credentials: true,
   }),
